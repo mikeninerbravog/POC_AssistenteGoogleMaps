@@ -70,25 +70,6 @@ Gera a URL dinâmica para pesquisa no Google Maps e a abre automaticamente no na
 ### 4. Loop Principal
 Mantém o sistema ativo, ouvindo novos comandos até que o usuário decida encerrar.
 
-## Erros Comuns e Soluções
-### Erro `speech_recognition.exceptions.WaitTimeoutError`
-Se ocorrer erro de timeout ao esperar o áudio, remova o `timeout` na função de captura:
-```python
-audio = recognizer.listen(source)
-```
-### Mensagens de Erro do ALSA no Linux
-Para suprimir mensagens como **"unable to open slave"**, execute:
-```bash
-sudo apt update
-sudo apt install alsa-utils pulseaudio libasound2-plugins
-pulseaudio --kill
-pulseaudio --start
-```
-Se quiser apenas ocultar os avisos sem corrigir, rode o script com:
-```bash
-python nome_do_script.py 2>/dev/null
-```
-
 ## Conclusão
 Este projeto demonstra a aplicação de **Machine Learning e NLP** para criar um assistente de voz funcional. O código foi otimizado para evitar cortes no reconhecimento de fala e melhorar a precisão da busca. O assistente pode ser facilmente expandido para outras aplicações como bots conversacionais, automação de tarefas e integração com APIs externas.
 
