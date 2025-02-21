@@ -48,7 +48,7 @@ pip install pygobject
 ## Uso
 Para rodar o assistente virtual, execute:
 ```bash
-python nome_do_script.py
+python do1.py
 ```
 O assistente iniciará perguntando **"O que você deseja procurar no Google Maps?"**. Basta falar um local ou serviço desejado. O sistema continuará capturando comandos até que o usuário diga **"fim"**, **"encerrar"** ou **"sair"**.
 
