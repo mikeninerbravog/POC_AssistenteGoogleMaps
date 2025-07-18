@@ -1,75 +1,100 @@
-# Assistente Virtual - Prova de Conceito (POC)
+# Virtual Assistant - Proof of Concept (POC)
 
-## Aluno
-Marcello dos Santos
+## Student
+
+Mike Niner Bravog
 
 ## Bootcamp
-BairesDev - Machine Learning Practitioner - Fevereiro 2025
 
-## Descrição
-Este projeto consiste na criação de um assistente virtual baseado em **Processamento de Linguagem Natural (NLP)**. O sistema é capaz de converter áudio em texto (*Speech-to-Text*), identificar intenções e realizar buscas no Google Maps com base nos comandos de voz do usuário.
+BairesDev - Machine Learning Practitioner - February 2025
 
-### Funcionalidades
-- Captura de áudio via microfone e conversão para texto
-- Interpretação do comando e busca no Google Maps
-- Resposta por voz confirmando a pesquisa antes de abrir o navegador
-- Loop contínuo até o usuário encerrar
+## Description
 
-## Requisitos
-O sistema foi desenvolvido e testado no **Python 3.11**. Para garantir a execução correta, instale as dependências abaixo.
+This project is a virtual assistant built using **Natural Language Processing (NLP)**. The system captures audio input from the user, transcribes it to text (*Speech-to-Text*), identifies the intent, and performs searches on Google Maps based on the spoken command.
 
-### Dependências
-Instale os pacotes necessários com:
+### Features
+
+* Audio capture via microphone and conversion to text
+* Command interpretation and Google Maps search
+* Voice response confirming the query before opening the browser
+* Continuous loop until the user ends the session
+
+## Requirements
+
+The system was developed and tested with **Python 3.11**. To ensure correct execution, install the dependencies below.
+
+### Dependencies
+
+Install all required packages with:
+
 ```bash
 pip install -r requirements.txt
 ```
-Se ainda não gerou o arquivo `requirements.txt`, utilize:
+
+If you haven't created the `requirements.txt` file yet, run:
+
 ```bash
 pip freeze > requirements.txt
 ```
 
-### Instalação de Pacotes Específicos
-Caso tenha problemas com **PyAudio** no Linux, instale a biblioteca **PortAudio** antes:
+### Specific Package Installation
+
+If you face issues with **PyAudio** on Linux, install **PortAudio** first:
+
 ```bash
 sudo apt update
 sudo apt install portaudio19-dev
 pip install pyaudio
 ```
-No Windows, pode ser necessário instalar via **pipwin**:
+
+On Windows, you may need to install it using **pipwin**:
+
 ```bash
 pip install pipwin
 pipwin install pyaudio
 ```
-Além disso, foi necessário instalar o **pygobject** para compatibilidade com o sistema:
+
+Additionally, **pygobject** was required for system compatibility:
+
 ```bash
 pip install pygobject
 ```
 
-## Uso
-Para rodar o assistente virtual, execute:
+## Usage
+
+To start the virtual assistant, run:
+
 ```bash
 python do1.py
 ```
-O assistente iniciará perguntando **"O que você deseja procurar no Google Maps?"**. Basta falar um local ou serviço desejado. O sistema continuará capturando comandos até que o usuário diga **"fim"**, **"encerrar"** ou **"sair"**.
 
-### Exemplo de Comandos
-- "Restaurante japonês no Leblon"
-- "Gesseiro perto de mim"
-- "Farmácia 24 horas em Copacabana"
+The assistant will begin by asking **"What would you like to search for on Google Maps?"**
+Simply say a location or service. The system will continue listening for commands until you say **"end"**, **"quit"**, or **"exit"**.
 
-## Estrutura do Código
-### 1. Conversão de Texto em Fala (*Text-to-Speech - TTS*)
-Utiliza `gTTS` para transformar texto em áudio, permitindo que o assistente responda confirmando a busca.
+### Example Commands
 
-### 2. Captura e Reconhecimento de Voz (*Speech-to-Text - STT*)
-Usa `speech_recognition` para capturar a fala e converter para texto. Ajustes foram feitos para evitar cortes na captura.
+* "Japanese restaurant in Leblon"
+* "Plasterer near me"
+* "24-hour pharmacy in Copacabana"
 
-### 3. Busca no Google Maps
-Gera a URL dinâmica para pesquisa no Google Maps e a abre automaticamente no navegador.
+## Code Structure
 
-### 4. Loop Principal
-Mantém o sistema ativo, ouvindo novos comandos até que o usuário decida encerrar.
+### 1. Text-to-Speech (TTS)
 
-## Conclusão
-Este projeto demonstra a aplicação de **Machine Learning e NLP** para criar um assistente de voz funcional. O código foi otimizado para evitar cortes no reconhecimento de fala e melhorar a precisão da busca. O assistente pode ser facilmente expandido para outras aplicações como bots conversacionais, automação de tarefas e integração com APIs externas.
+Uses `gTTS` to convert text into speech, allowing the assistant to confirm the query audibly.
 
+### 2. Speech-to-Text (STT)
+
+Uses `speech_recognition` to capture speech and convert it to text. Configurations were tuned to prevent audio clipping.
+
+### 3. Google Maps Search
+
+Dynamically generates the search URL and opens it in the default web browser.
+
+### 4. Main Loop
+
+Keeps the system running, continuously listening for new commands until the user decides to stop.
+
+## Conclusion
+
+This project showcases how **Machine Learning and NLP** can be applied to build a functional voice assistant. The code has been optimized to minimize speech recognition interruptions and improve search accuracy. This assistant can be easily extended to other use cases like conversational bots, task automation, or integration with external APIs.
